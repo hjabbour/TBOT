@@ -1,5 +1,5 @@
-from peewee import *
-from Utils.dbConnection import DBConnection
+from peewee import Model
+from .. utils.dbConnection import DBConnection
 
 class BaseModel(Model):
     class Meta:

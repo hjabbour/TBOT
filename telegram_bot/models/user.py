@@ -1,6 +1,6 @@
-from peewee import *
+from peewee import CharField,IntegerField
 
-from models.BaseModel import BaseModel
+from . basemodel import BaseModel
 
 class UserModel(BaseModel):
     telegramUserId=IntegerField(unique=True)

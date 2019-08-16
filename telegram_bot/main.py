@@ -3,12 +3,13 @@ from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
 import logging
 import os
-import settings
-import systemInfo
 
-from Utils.dbutils import DBUtil
+import telegram_bot.settings
 
-from models.user import UserModel
+from . utils.dbutils import DBUtil
+from . models.user import UserModel
+from . system_info import BasicSystemInfo
+
 
 masterUserId = os.getenv('master_user_id')
 
@@ -21,7 +22,7 @@ DBUtil.initDB()
 
 job_queue = updater.job_queue
 
-sysInf = systemInfo.BasicSystemInfo()
+sysInf = BasicSystemInfo()
 
 def start(update, context):
     context.bot.send_message(chat_id=update.message.chat_id, text="I'm a bot, please talk to me!")
@@ -66,10 +67,19 @@ dispatcher.add_handler(all_handler)
 
 
 
-def callback_minute(context):
-    context.bot.send_message(chat_id=masterUserId, 
-                             text='One message every minute')
+#def callback_minute(context):
+#    context.bot.send_message(chat_id=masterUserId, 
+#                             text='One message every minute')
 
-job_minute = job_queue.run_repeating(callback_minute, interval=60, first=0)
+#job_minute = job_queue.run_repeating(callback_minute, interval=60, first=0)
 
-updater.start_polling()
+def config():
+    pass
+    
+
+def main():
+    updater.start_polling()
+
+
+if __name__ == "__main__" :
+    main()

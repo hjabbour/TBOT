@@ -1,7 +1,7 @@
 from peewee import *
-from Utils.dbConnection import DBConnection
 
-from models.user import UserModel
+from .dbConnection import DBConnection
+from ..models.user import UserModel
 
 class DBUtil:
 
