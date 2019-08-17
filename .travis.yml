@@ -1,5 +1,8 @@
 language: python
 
+#uses ubuntu 18.04 LTS for build
+dist: bionic
+
 python:
   - "3.7"
 
