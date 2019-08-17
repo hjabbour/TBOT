@@ -1,4 +1,4 @@
-# Simple Python telegram bot
+# Simple Python telegram bot [![Build Status](https://travis-ci.org/brunoshiroma/telegram-bot.svg?branch=master)](https://travis-ci.org/brunoshiroma/telegram-bot)
 using the python-telegram-bot lib
 
 ### Libs/Frameworks
