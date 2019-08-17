@@ -11,3 +11,6 @@ services:
 
 before_install:
   - docker build .
+
+script:
+  - python -m unittest -v tests/*.py
