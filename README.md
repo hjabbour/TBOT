@@ -1,5 +1,11 @@
-# Simple Python telegram bot [![Build Status](https://travis-ci.org/brunoshiroma/telegram-bot.svg?branch=master)](https://travis-ci.org/brunoshiroma/telegram-bot)
+# Simple Python telegram bot [![Build Status](https://travis-ci.org/brunoshiroma/telegram-bot.svg?branch=master)]
 using the python-telegram-bot lib
+
+### CI
+[travis](https://travis-ci.org/brunoshiroma/telegram-bot)
+
+### Docker image
+[docker hub](https://cloud.docker.com/repository/docker/brunoshiroma/telegram-bot)
 
 ### Libs/Frameworks
   * python-dotenv
