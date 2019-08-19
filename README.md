@@ -5,7 +5,7 @@ using the python-telegram-bot lib
 [travis](https://travis-ci.org/brunoshiroma/telegram-bot)
 
 ### Docker image
-[docker hub](https://cloud.docker.com/repository/docker/brunoshiroma/telegram-bot)
+[docker hub](https://hub.docker.com/r/brunoshiroma/telegram-bot)
 
 ### Libs/Frameworks
   * python-dotenv
