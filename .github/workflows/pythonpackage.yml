@@ -35,8 +35,10 @@ jobs:
         pytest
     
   registry-push:
+      needs: build
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v1
       - name: Deploy docker image Github Packages
         run: |
           docker login docker.pkg.github.com -u brunoshiroma -p ${{ secrets.GITHUB_PACKAGES }}
