@@ -33,3 +33,10 @@ jobs:
       run: |
         pip install pytest
         pytest
+    - name: Deploy docker image Github Packages
+      if: matrix.os == 'ubuntu-18.04'
+      run: |
+        docker login docker.pkg.github.com -u brunoshiroma -p ${{ secrets.GITHUB_PACKAGES }}
+        docker build -t telegram-bot:`git log -1 --pretty=%H` .
+        docker tag telegram-bot:`git log -1 --pretty=%H` docker.pkg.github.com/brunoshiroma/telegram-bot/telegram-bot:`git log -1 --pretty=%H`
+        docker push docker.pkg.github.com/brunoshiroma/telegram-bot/telegram-bot:`git log -1 --pretty=%H`
