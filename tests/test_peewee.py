@@ -1,6 +1,7 @@
 import unittest
 
 import os
+import sys
 
 db_file = "telegram_bot_test.db"
 
@@ -33,7 +34,10 @@ class TestPeewee(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         #remove db test file
-        os.remove(db_file)
+        try:
+            os.remove(db_file)
+        except:
+            print(sys.exc_info()[0])
 
 if __name__ == '__main__':
     unittest.main()
