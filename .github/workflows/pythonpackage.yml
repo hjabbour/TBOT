@@ -33,8 +33,11 @@ jobs:
       run: |
         pip install pytest
         pytest
-    - name: Deploy docker image Github Packages
-      if: matrix.os == 'ubuntu-18.04'
+    
+  registry-push:
+    runs-on: [ubuntu-18.04]
+    steps:
+      - name: Deploy docker image Github Packages
       run: |
         docker login docker.pkg.github.com -u brunoshiroma -p ${{ secrets.GITHUB_PACKAGES }}
         docker build -t telegram-bot:`git log -1 --pretty=%H` .
