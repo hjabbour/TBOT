@@ -7,14 +7,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - telegram_token=${telegram_token}
-    volumes:
-      - unidata:/localdata
-   
+      - clientstring=${clientstring}
+      - databasestring=${databasestring}
+      - tablestring=${tablestring}
     restart: always
-volumes:
-  unidata:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/haytham/ML/Pyscrpt/unidata
-      o: bind
